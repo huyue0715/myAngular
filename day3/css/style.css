@@ -1,0 +1,98 @@
+body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.12rem;
+  display: flex;
+  flex-direction: column;
+  background: #f3f3fe; }
+
+.header {
+  height: 0.52rem;
+  border-bottom: 1px solid #eaeafd;
+  background: url("../images/bg_03.jpg");
+  padding: 0 5%;
+  box-sizing: border-box;
+  background: #ffffff;
+  display: flex; }
+  .header a {
+    display: block;
+    color: #999;
+    flex: 1;
+    float: left;
+    text-align: center;
+    line-height: 0.5rem;
+    font-size: 0.14rem;
+    margin: 0 5%; }
+    .header a:hover, .header a.on {
+      color: #617ef6;
+      border-bottom: 2px solid #617ef6;
+      box-sizing: border-box; }
+
+.content {
+  flex: 1;
+  overflow-y: scroll;
+  padding-top: 0.12rem; }
+  .content ul {
+    padding: 0.12rem 0.24rem;
+    background: #ffffff;
+    box-sizing: border-box; }
+    .content ul li {
+      margin-top: 0.12rem;
+      height: 1rem;
+      color: #ffffff;
+      position: relative; }
+      .content ul li:nth-child(1) {
+        margin-top: 0; }
+        .content ul li:nth-child(1) p:nth-child(1) {
+          background: #fd6060; }
+      .content ul li:nth-child(2) p:nth-child(1) {
+        background: #5686f4; }
+      .content ul li:nth-child(3) p:nth-child(1) {
+        background: #965df5; }
+      .content ul li:nth-child(4) p:nth-child(1) {
+        background: #4bc670; }
+      .content ul li p:nth-child(1) {
+        height: 0.6rem;
+        border-radius: 0.06rem 0.06rem 0 0;
+        padding: 0 0.14rem;
+        display: flex;
+        justify-content: space-between; }
+        .content ul li p:nth-child(1) span:nth-child(1) {
+          font-size: 0.44rem; }
+          .content ul li p:nth-child(1) span:nth-child(1) sup {
+            font-size: 0.24rem; }
+        .content ul li p:nth-child(1) span:nth-child(2) {
+          font-size: 0.24rem;
+          line-height: 0.76rem; }
+      .content ul li p:nth-child(2) {
+        background: #ffffff;
+        height: 0.4rem;
+        border-radius: 0 0 0.06rem 0.06rem;
+        padding: 0.03rem 0.14rem 0;
+        box-shadow: 0 1px 2px #cccccc;
+        display: flex;
+        flex-direction: column; }
+        .content ul li p:nth-child(2) span {
+          font-size: 0.1rem;
+          line-height: 0.18rem; }
+          .content ul li p:nth-child(2) span:nth-child(1) {
+            color: #1bb174; }
+          .content ul li p:nth-child(2) span:nth-child(2) {
+            color: #aaaaaa; }
+      .content ul li p:nth-child(3) {
+        position: absolute;
+        left: 0;
+        top: 0.56rem;
+        width: 100%;
+        height: 0.05rem;
+        background: url("../images/cir_06.png");
+        background-size: 2%;
+        z-index: 99; }
+
+.footer {
+  height: 0.44rem;
+  border-top: 1px solid #ccc; }
+
+/*# sourceMappingURL=style.css.map */

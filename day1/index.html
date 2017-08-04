@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telphone=no, email=no">
+    <title>日考1</title>
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="css/swiper.css">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="swiper-container content">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="top">
+                <img src="images/index_top.png" alt=""/>
+                <ul class="list">
+                    <li>
+                        已报名
+                        <span>126</span>
+                    </li>
+                    <li>
+                        投票人次
+                        <span>964</span>
+                    </li>
+                    <li>
+                        浏览量
+                        <span>1326</span>
+                    </li>
+                </ul>
+                <p class="djs">
+                    <!--距离活动结束还剩：<span>12天16时25分17秒</span>-->
+                </p>
+                <div class="input">
+                    <input type="text" placeholder="请输入喵主子的名字或编号" id="search"/>
+                    <img src="images/index_search.png" alt=""/>
+                    <ul id="cat">
+
+                    </ul>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li class="cur"><a href="#">每日推荐</a></li>
+                    <li><a href="#">投票排行</a></li>
+                    <li><a href="#">TOP 300</a></li>
+                </ul>
+            </nav>
+            <div class="imgs">
+                <ul class="ulOne">
+                    <!--<li>-->
+                    <!--<img src="images/maomi.png" alt=""/>-->
+                    <!--<span>22号</span>-->
+                    <!--<p>-->
+                    <!--<b>-->
+                    <!--<em>猫咪名字</em>-->
+                    <!--<em>122票</em>-->
+                    <!--</b>-->
+                    <!--<b>投票</b>-->
+                    <!--</p>-->
+                    <!--</li>-->
+                </ul>
+                <ul class="ulTwo">
+
+                </ul>
+            </div>
+        </div>
+        <div class="swiper-slide">2</div>
+        <div class="swiper-slide">2</div>
+        <div class="swiper-slide">2</div>
+        <div class="swiper-slide">2</div>
+        <div class="swiper-slide">2</div>
+    </div>
+</div>
+<footer class="footer">
+    <ul>
+        <li onclick="slideTo(0)" class="on"><a href="#">1</a></li>
+        <li onclick="slideTo(1)"><a href="#">2</a></li>
+        <li onclick="slideTo(2)"><a href="#">3</a></li>
+        <li onclick="slideTo(3)"><a href="#">4</a></li>
+        <li onclick="slideTo(4)"><a href="#">5</a></li>
+        <li onclick="slideTo(5)"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+    </ul>
+</footer>
+</body>
+<script type='text/javascript' src='js/swiper.js'></script>
+<script type='text/javascript' src='js/zepto.js'></script>
+<script type='text/javascript' src='js/event.js'></script>
+<script type='text/javascript' src='js/ajax.js'></script>
+<script>
+    var content = new Swiper(".content", {
+        onSlideChangeStart: function (swiper) {
+            // console.log(swiper.activeIndex)
+            $(".footer ul li").eq(swiper.activeIndex).addClass("on").siblings().removeClass("on")
+        }
+    });
+    function slideTo(index) {
+        content.slideTo(index)
+    }
+    $.ajax({
+        url: "json/data.json",
+        success: function (rs) {
+            //渲染数据
+            for (key in rs) {
+                //console.log($(".imgs ul").attr("class")==key)
+                $(".imgs ul").each(function (i, n) {
+                    if (n.className == key) {
+                        var str = "";
+                        $(rs[key]).each(function (i, n) {
+                            str += '<li><img src="' + n.src + '" alt=""/><span>' + n.num + '</span><p><b><em>' + n.name + '</em><em>' + n.count + '</em></b><b>投票</b></p></li>'
+                        })
+                        n.innerHTML = str
+                    }
+                })
+            }
+
+        }
+    });
+    //倒计时
+    function djtime(y, m, t) {
+        var time = +new Date(),
+                da = +new Date(y, m, t);
+        var timer = da - time,
+        //console.log(timer);
+                date = Math.floor(timer / 1000 / 60 / 60 / 24),
+                hours = Math.floor(timer / 1000 / 60 / 60 % 24),
+                minutes = Math.floor(timer / 1000 / 60 % 60);
+        seconds = Math.floor(timer / 1000 % 60);
+        minsec = Math.floor(timer % 1000);
+        $(".djs").html("距离活动结束还剩：" + date + "日" + minutes + "时" + minutes + "分" + seconds + "秒" + minsec + "秒")
+    }
+    setInterval("djtime(2017,10,1)", 1000);
+
+
+    //模糊查询
+    $("#search").on("keyup", function (e) {
+        var event = e || window.e;
+        $("#cat").html("");
+        var val = $.trim(this.value);
+        // console.log(val);
+        $.ajax({
+            url: "json/data.json",
+            success: function (rs) {
+                for (key in rs) {
+                    var html = '';
+                    $.each(rs[key], function (i, n) {
+                        if (n.name.indexOf(val) != -1 || n.num.indexOf(val) != -1) {
+                            html += '<li>' + "编号：" + n.num + "猫咪姓名：" + n.name + '</li>'
+                        }
+                    });
+                    $("#cat").html(html);
+                }
+            }
+        });
+        if (event.keyCode == 8 || val == "") {
+            $("#cat").html("");
+        }
+    })
+
+</script>
+</html>

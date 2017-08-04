@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telphone=no, email=no">
+    <title>智能购票</title>
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="css/swiper.css">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+    <a href="#"><i class="fa fa-columns"></i></a>
+
+    <p><i class="fa fa-search"></i><input type="text" placeholder="搜索旅行地/酒店/景点"/></p>
+    <a href="#"><i class="fa fa-comment-o"></i><em></em></a>
+</header>
+<div class="content">
+    <div class="banner swiper-container">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide"><a href="#"><img src="images/banner_01.jpg" alt=""/></a></li>
+            <li class="swiper-slide"><a href="#"><img src="images/banner_01.jpg" alt=""/></a></li>
+            <li class="swiper-slide"><a href="#"><img src="images/banner_01.jpg" alt=""/></a></li>
+            <li class="swiper-slide"><a href="#"><img src="images/banner_01.jpg" alt=""/></a></li>
+        </ul>
+        <p class="swiper-pagination">
+            <span></span><span></span><span></span><span></span>
+        </p>
+    </div>
+    <div class="list">
+        <ul class="layout">
+            <li>
+                <a href="#">
+                    <img src="images/img_03.jpg" alt=""/>
+                    <span>酒店</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">特价酒店</a>
+                <a href="#">客栈·民宿<em>5折
+                    <small>起</small>
+                </em></a>
+            </li>
+            <li>
+                <a href="#">国际酒店</a>
+                <a href="#">会场 · 聚会</a>
+            </li>
+        </ul>
+        <ul class="layout">
+            <li>
+                <a href="#">
+                    <img src="images/img_06.jpg" alt=""/>
+                    <span>机票</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">春运机票</a>
+                <a href="#">火车票 · 抢票</a>
+            </li>
+            <li>
+                <a href="#">汽车票 · 船票<em>5折
+                    <small>起</small>
+                </em></a>
+                <a href="#">专车 · 自驾</a>
+            </li>
+        </ul>
+        <ul class="layout">
+            <li>
+                <a href="#">
+                    <img src="images/img_08.jpg" alt=""/>
+                    <span>旅游度假</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">景点 · 门票</a>
+                <a href="#">自由行</a>
+            </li>
+            <li>
+                <a href="#">旅游团购</a>
+                <a href="#">周边 · 短途</a>
+            </li>
+        </ul>
+        <ul class="common">
+            <li><a href="#">金融 · 理财</a></li>
+            <li><a href="#">保险 · 车险</a></li>
+            <li><a href="#">全球购 · 换汇</a></li>
+        </ul>
+    </div>
+    <ul class="icons">
+        <li><a href="#"><i class="fa fa-github"></i></a></li>
+        <li><a href="#"><i class="fa fa-globe"></i></a></li>
+        <li><a href="#"><i class="fa fa-tachometer"></i></a></li>
+        <li><a href="#"><i class="fa fa-bullseye"></i></a></li>
+        <li><a href="#"><i class="fa fa-stack-overflow"></i></a></li>
+    </ul>
+</div>
+<footer class="footer">
+    <a href="#" class="on"><i class="fa fa-home"></i><span>首页</span></a>
+    <a href="#"><i class="fa fa-floppy-o"></i><span>订单</span></a>
+    <a href="#"><i class="fa fa-truck"></i><span>春运</span></a>
+    <a href="#"><i class="fa fa-headphones"></i><span>服务</span></a>
+    <a href="#"><i class="fa fa-user-circle"></i><span>我的</span></a>
+</footer>
+</body>
+<script type='text/javascript' src='js/swiper.js'></script>
+<script type='text/javascript' src='js/zepto.js'></script>
+<script type='text/javascript' src='js/event.js'></script>
+<script type='text/javascript'>
+    var banner = new Swiper(".banner", {
+        pagination: ".swiper-pagination",
+        autoplay: 2000
+    });
+
+    var bg = ["cbdd2f", "4fb051", "02aaf6", "7aba2e", "6554f4"];
+    $.each(bg, function (i, n) {
+        $(".icons li").eq(i).children("a").css("background", "#" + n)
+    })
+
+</script>
+</html>

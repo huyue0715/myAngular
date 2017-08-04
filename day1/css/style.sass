@@ -1,0 +1,193 @@
+body
+  position: absolute
+  top: 0
+  bottom: 0
+  width: 100%
+  font-size: .12rem
+  display: flex
+  flex-direction: column
+  background: #fadbce
+  padding: 0
+  margin: 0
+
+.swiper-container, .swiper-wrapper, .swiper-slide
+  width: 100%
+
+.content
+  flex: 1
+  padding-top: .06rem
+  .swiper-slide
+    overflow-y: scroll
+    .top
+      position: relative
+      width: 100%
+      & > img
+        display: block
+        width: 100%
+      .list
+        position: absolute
+        left: 0
+        top: 63.5%
+        width: 100%
+        padding: 0 5%
+        box-sizing: border-box
+        li
+          float: left
+          display: flex
+          flex-direction: column
+          width: 33.333%
+          text-align: center
+          font-size: .1rem
+          color: #ffffff
+          line-height: .16rem
+          span
+            color: #f0b93c
+      .djs
+        position: absolute
+        left: 0
+        top: 74.5%
+        width: 100%
+        font-size: .1rem
+        color: #80c8cf
+        text-align: center
+      .input
+        position: absolute
+        left: 50%
+        top: 88%
+        width: 70%
+        height: .26rem
+        margin-left: -35%
+        #cat
+          position: absolute
+          width: 100%
+          height: auto
+          background: #ffffff
+        input[type="text"]
+          padding: 0 .36rem 0 .08rem
+          box-sizing: border-box
+          display: block
+          width: 100%
+          height: 100%
+          background: #ffffff
+          outline: none
+          border: none
+          border-radius: .04rem
+          box-shadow: 1px 1px 1px #dae9eb inset
+          color: #96d3da
+          &::-webkit-input-placeholder
+            color: #96d3da
+        img
+          position: absolute
+          width: .18rem
+          height: .18rem
+          right: .1rem
+          top: .04rem
+  nav
+    ul
+      margin: .11rem auto
+      height: .36rem
+      width: 90%
+      li
+        width: 28%
+        float: left
+        height: .36rem
+        border-radius: .18rem
+        background: #88ced5
+        text-align: center
+        line-height: .36rem
+        margin: 0 2.5%
+        a
+          color: #ffffff
+        &:hover, &.cur
+          background: #358994
+  .imgs
+    width: 100%
+    padding: 0 .08rem
+    box-sizing: border-box
+    ul
+      width: 50%
+      float: left
+      box-sizing: border-box
+      &:nth-child(1)
+        padding-right: .04rem
+      &:nth-child(2)
+        padding-left: .04rem
+      li
+        width: 100%
+        position: relative
+        box-sizing: border-box
+        margin-bottom: .42rem
+        img
+          display: block
+          width: 100%
+        span
+          position: absolute
+          left: 0
+          top: 0
+          padding: .06rem .08rem
+          background: #e79c81
+          color: #ffffff
+        p
+          position: absolute
+          left: 0
+          bottom: -.36rem
+          width: 100%
+          height: .36rem
+          color: #ffffff
+          b
+            font-weight: 200
+            height: 100%
+
+          b:nth-child(1)
+            float: left
+            width: 65%
+            background: #e79c81
+            display: flex
+            flex-direction: column
+            padding-left: .06rem
+            box-sizing: border-box
+            em
+              font-style: normal
+              font-size: .1rem
+              &:nth-child(1)
+                line-height: .18rem
+          b:nth-child(2)
+            float: left
+            width: 35%
+            background: #e34646
+            line-height: .36rem
+            text-align: center
+
+.footer
+  height: .37rem
+  padding: .06rem 0
+  box-sizing: border-box
+  ul
+    width: 1.8rem
+    height: 100%
+    margin: 0 auto
+    li
+      width: .25rem
+      height: .25rem
+      border: 1px solid #358994
+      border-radius: 50%
+      box-sizing: border-box
+      font-size: .1rem
+      text-align: center
+      line-height: .25rem
+      float: left
+      margin-right: .06rem
+      &:last-child
+        margin-right: 0
+        .fa
+          font-size: .18rem
+      a
+        color: #358994
+        display: block
+        width: 100%
+        height: 100%
+      &:hover, &.on
+        background: #358994
+        a
+          color: #ffffff
+
